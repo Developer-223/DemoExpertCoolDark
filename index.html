@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC Technician Expert Cool | Faisalabad's #1 AC, Fridge & Cooler Service</title>
+    <meta name="description"
+        content="Expert AC repair, fridge repair, water cooler service, gas filling, sale & purchase in Faisalabad. Fast, reliable, affordable. Call now!">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iconify/2.0.0/iconify.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                        syne: ['Syne', 'sans-serif'],
+                    },
+                    colors: {
+                        cool: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .font-syne {
+            font-family: 'Syne', sans-serif;
+        }
+
+        /* Animations */
+        @keyframes fadeInUpBlur {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+                filter: blur(10px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(14, 165, 233, 0.2);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(14, 165, 233, 0.4);
+            }
+        }
+
+        @keyframes spin-slow {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes snowfall {
+            0% {
+                transform: translateY(-10px) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes border-spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUpBlur 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+        }
+
+        .animate-fade-in-d1 {
+            animation: fadeInUpBlur 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s both;
+        }
+
+        .animate-fade-in-d2 {
+            animation: fadeInUpBlur 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s both;
+        }
+
+        .animate-fade-in-d3 {
+            animation: fadeInUpBlur 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s both;
+        }
+
+        .animate-fade-in-d4 {
+            animation: fadeInUpBlur 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s both;
+        }
+
+        .animate-fade-in-d5 {
+            animation: fadeInUpBlur 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s both;
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .animate-pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        .animate-marquee {
+            animation: marquee 30s linear infinite;
+        }
+
+        .animate-spin-slow {
+            animation: spin-slow 20s linear infinite;
+        }
+
+        /* Scroll animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            filter: blur(10px);
+            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+        }
+
+        /* Snowflake particles */
+        .snowflake {
+            position: fixed;
+            color: rgba(14, 165, 233, 0.3);
+            font-size: 12px;
+            pointer-events: none;
+            z-index: 0;
+            animation: snowfall linear infinite;
+        }
+
+        /* Glow border effect */
+        .glow-border {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glow-border::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: conic-gradient(from 0deg, transparent, #0ea5e9, transparent, #0ea5e9, transparent);
+            animation: border-spin 4s linear infinite;
+            z-index: -1;
+            border-radius: inherit;
+        }
+
+        .glow-border::after {
+            content: '';
+            position: absolute;
+            inset: 1px;
+            background: #171717;
+            border-radius: inherit;
+            z-index: -1;
+        }
+
+        /* Service card hover */
+        .service-card {
+            transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .service-card:hover {
+            background: rgba(14, 165, 233, 0.05);
+            transform: translateY(-4px);
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            color: #0ea5e9;
+        }
+
+        .service-icon {
+            transition: all 0.5s ease;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0ea5e9;
+        }
+
+        /* Beam effect */
+        .beam-line {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.4), transparent);
+            animation: beam-move 3s ease-in-out infinite;
+        }
+
+        @keyframes beam-move {
+
+            0%,
+            100% {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+
+            50% {
+                opacity: 1;
+                transform: translateX(100%);
+            }
+        }
+
+        /* CTA Button */
+        .cta-btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.5s;
+        }
+
+        .cta-btn:hover::before {
+            transform: translateX(100%);
+        }
+
+        /* Dot grid */
+        .dot-grid {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #171717;
+            border: 1px solid rgba(14, 165, 233, 0.3);
+            color: #fff;
+            padding: 16px 24px;
+            border-radius: 12px;
+            z-index: 9999;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 0 30px rgba(14, 165, 233, 0.15);
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* Number counter */
+        .counter {
+            font-variant-numeric: tabular-nums;
+        }
+    </style>
+</head>
+
+<body class="font-inter">
+
+    <!-- Snowflake particles -->
+    <div id="snowflakes" aria-hidden="true"></div>
+
+    <!-- Background ambient glow -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-cool-500/5 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cool-400/5 rounded-full blur-[100px]"></div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm bg-[#0a0a0a]/80 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div
+                    class="w-10 h-10 rounded-xl bg-cool-500/10 border border-cool-500/20 flex items-center justify-center group-hover:bg-cool-500/20 transition-colors duration-300">
+                    <span class="iconify text-cool-400 text-xl" data-icon="lucide:snowflake"></span>
+                </div>
+                <div>
+                    <span class="font-syne font-bold text-sm tracking-tight">EXPERT COOL</span>
+                    <span class="block text-[10px] text-neutral-500 uppercase tracking-widest">AC Technician</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#services"
+                    class="text-xs uppercase tracking-widest text-neutral-400 hover:text-white transition-colors duration-300">Services</a>
+                <a href="#why-us"
+                    class="text-xs uppercase tracking-widest text-neutral-400 hover:text-white transition-colors duration-300">Why
+                    Us</a>
+                <a href="#process"
+                    class="text-xs uppercase tracking-widest text-neutral-400 hover:text-white transition-colors duration-300">Process</a>
+                <a href="#reviews"
+                    class="text-xs uppercase tracking-widest text-neutral-400 hover:text-white transition-colors duration-300">Reviews</a>
+                <a href="#contact"
+                    class="text-xs uppercase tracking-widest text-neutral-400 hover:text-white transition-colors duration-300">Contact</a>
+            </div>
+
+            <!-- CTA + Mobile Toggle -->
+            <div class="flex items-center gap-4">
+                <a href="tel:+923001234567"
+                    class="hidden sm:flex cta-btn items-center gap-2 bg-cool-500 text-black text-xs font-medium uppercase tracking-widest px-6 py-3 rounded-lg hover:bg-cool-400 transition-colors duration-300">
+                    <span class="iconify text-sm" data-icon="lucide:phone"></span>
+                    Call Now
+                </a>
+                <button id="menuToggle"
+                    class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg border border-white/10 hover:bg-white/5 transition-colors">
+                    <span class="iconify text-xl" data-icon="lucide:menu" id="menuIcon"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu"
+        class="mobile-menu fixed inset-0 z-40 bg-[#0a0a0a]/98 backdrop-blur-lg flex flex-col items-center justify-center gap-8">
+        <a href="#services"
+            class="text-2xl font-syne font-medium text-neutral-300 hover:text-white transition-colors mobile-link">Services</a>
+        <a href="#why-us"
+            class="text-2xl font-syne font-medium text-neutral-300 hover:text-white transition-colors mobile-link">Why
+            Us</a>
+        <a href="#process"
+            class="text-2xl font-syne font-medium text-neutral-300 hover:text-white transition-colors mobile-link">Process</a>
+        <a href="#reviews"
+            class="text-2xl font-syne font-medium text-neutral-300 hover:text-white transition-colors mobile-link">Reviews</a>
+        <a href="#contact"
+            class="text-2xl font-syne font-medium text-neutral-300 hover:text-white transition-colors mobile-link">Contact</a>
+        <a href="tel:+923001234567"
+            class="cta-btn mt-4 flex items-center gap-2 bg-cool-500 text-black text-sm font-medium uppercase tracking-widest px-8 py-4 rounded-lg">
+            <span class="iconify" data-icon="lucide:phone"></span>
+            Call Now
+        </a>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-screen flex items-center justify-center dot-grid overflow-hidden">
+        <!-- Spinning ring decoration -->
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[800px] md:h-[800px] border border-white/[0.03] rounded-full animate-spin-slow pointer-events-none">
+        </div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[500px] md:h-[500px] border border-cool-500/[0.05] rounded-full animate-spin-slow pointer-events-none"
+            style="animation-direction: reverse; animation-duration: 15s;"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center pt-24">
+            <!-- Badge -->
+            <div
+                class="animate-fade-in inline-flex items-center gap-2 bg-white/[0.03] border border-white/10 rounded-full px-5 py-2 mb-8">
+                <span class="w-2 h-2 rounded-full bg-cool-400 animate-pulse"></span>
+                <span class="text-xs uppercase tracking-widest text-neutral-400">Serving Faisalabad Since 2015</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1
+                class="animate-fade-in-d1 font-syne font-bold text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tighter leading-[0.95] mb-6">
+                <span class="block">Keep Your</span>
+                <span
+                    class="block bg-gradient-to-r from-cool-300 via-cool-400 to-cool-500 bg-clip-text text-transparent">Cooling
+                    Perfect</span>
+            </h1>
+
+            <!-- Subheading -->
+            <p
+                class="animate-fade-in-d2 text-neutral-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                Expert AC, fridge & water cooler repair, maintenance, gas filling and sale/purchase services — all
+                across <span class="text-white font-medium">Faisalabad</span>.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="animate-fade-in-d3 flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
+                <a href="tel:+923001234567"
+                    class="cta-btn w-full sm:w-auto flex items-center justify-center gap-3 bg-cool-500 text-black text-sm font-semibold uppercase tracking-widest px-8 py-4 rounded-xl hover:bg-cool-400 transition-colors duration-300 animate-pulse-glow">
+                    Call Now
+                    <span class="iconify text-lg" data-icon="lucide:phone"></span>
+                </a>
+                <a href="#services"
+                    class="w-full sm:w-auto flex items-center justify-center gap-3 border border-white/10 text-white text-sm font-medium uppercase tracking-widest px-8 py-4 rounded-xl hover:bg-white/5 transition-colors duration-300">
+                    <span class="iconify text-lg" data-icon="lucide:arrow-down"></span>
+                    Our Services
+                </a>
+            </div>
+
+            <!-- Trust indicators -->
+            <div class="animate-fade-in-d4 flex flex-wrap items-center justify-center gap-8 text-neutral-500 mb-5">
+                <div class="flex items-center gap-2">
+                    <span class="iconify text-cool-400" data-icon="lucide:shield-check"></span>
+                    <span class="text-xs uppercase tracking-wider">Verified Expert</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="iconify text-cool-400" data-icon="lucide:clock"></span>
+                    <span class="text-xs uppercase tracking-wider">Same Day Service</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="iconify text-cool-400" data-icon="lucide:star"></span>
+                    <span class="text-xs uppercase tracking-wider">5-Star Rated</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="iconify text-cool-400" data-icon="lucide:wallet"></span>
+                    <span class="text-xs uppercase tracking-wider">Affordable Prices</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom gradient fade -->
+        <div
+            class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent pointer-events-none">
+        </div>
+    </section>
+
+    <!-- MARQUEE STRIP -->
+    <div class="relative border-y border-white/5 py-4 overflow-hidden bg-white/[0.01]">
+        <div class="animate-marquee flex whitespace-nowrap">
+            <span class="mx-8 text-xs uppercase tracking-[0.3em] text-neutral-400">AC Repair</span>
+            <span class="mx-4 text-cool-300">❄</span>
+            <span class="mx-8 text-xs uppercase tracking-[0.3em] text-neutral-400">Fridge Repair</span>
+            <span class="mx-4 text-cool-300">❄</span>
+            <span class="mx-8 text-xs uppercase tracking-[0.3em] text-neutral-400">Gas Filling</span>
+            <span class="mx-4 text-cool-300">❄</span>
+            <span class="mx-8 text-xs uppercase tracking-[0.3em] text-neutral-400">Water Cooler</span>
+            <span class="mx-4 text-cool-300">❄</span>
+            <span class="mx-8 text-xs uppercase tracking-[0.3em] text-neutral-400">AC Installation</span>
+            <span class="mx-4 text-cool-300">❄</span>
+            <span class="mx-8 text-xs uppercase tracking-[0.3em] text-neutral-400">Sale & Purchase</span>
+            <span class="mx-4 text-cool-300">❄</span>
+            <span class="mx-8 text-xs uppercase tracking-[0.3em] text-neutral-400">Maintenance</span>
+            <span class="mx-4 text-cool-300">❄</span>
+            <span class="mx-8 text-xs uppercase tracking-[0.3em] text-neutral-400">AC Repair</span>
+            <span class="mx-4 text-cool-300">❄</span>
+            <span class="mx-8 text-xs uppercase tracking-[0.3em] text-neutral-400">Fridge Repair</span>
+            <span class="mx-4 text-cool-300">❄</span>
+            <span class="mx-8 text-xs uppercase tracking-[0.3em] text-neutral-400">Gas Filling</span>
+            <span class="mx-4 text-cool-300">❄</span>
+            <span class="mx-8 text-xs uppercase tracking-[0.3em] text-neutral-400">Water Cooler</span>
+            <span class="mx-4 text-cool-300">❄</span>
+            <span class="mx-8 text-xs uppercase tracking-[0.3em] text-neutral-400">AC Installation</span>
+            <span class="mx-4 text-cool-300">❄</span>
+            <span class="mx-8 text-xs uppercase tracking-[0.3em] text-neutral-400">Sale & Purchase</span>
+            <span class="mx-4 text-cool-300">❄</span>
+            <span class="mx-8 text-xs uppercase tracking-[0.3em] text-neutral-400">Maintenance</span>
+            <span class="mx-4 text-cool-300">❄</span>
+        </div>
+    </div>
+
+    <!-- STATS SECTION -->
+    <section class="relative py-20 px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="reveal text-center">
+                <div class="font-syne font-bold text-3xl md:text-5xl tracking-tighter text-cool-400 counter"
+                    data-target="5000">0</div>
+                <div class="text-xs uppercase tracking-widest text-neutral-500 mt-2">ACs Serviced</div>
+            </div>
+            <div class="reveal text-center" style="transition-delay: 0.1s;">
+                <div class="font-syne font-bold text-3xl md:text-5xl tracking-tighter text-cool-400 counter"
+                    data-target="8">0</div>
+                <div class="text-xs uppercase tracking-widest text-neutral-500 mt-2">Years Experience</div>
+            </div>
+            <div class="reveal text-center" style="transition-delay: 0.2s;">
+                <div class="font-syne font-bold text-3xl md:text-5xl tracking-tighter text-cool-400 counter"
+                    data-target="3500">0</div>
+                <div class="text-xs uppercase tracking-widest text-neutral-500 mt-2">Happy Customers</div>
+            </div>
+            <div class="reveal text-center" style="transition-delay: 0.3s;">
+                <div class="font-syne font-bold text-3xl md:text-5xl tracking-tighter text-white">24<span
+                        class="text-cool-400">/7</span></div>
+                <div class="text-xs uppercase tracking-widest text-neutral-500 mt-2">Available</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="relative py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <!-- Section Header -->
+            <div class="reveal text-center mb-16">
+                <span class="inline-block text-xs uppercase tracking-[0.3em] text-cool-400 mb-4">What We Do</span>
+                <h2 class="font-syne font-bold text-3xl md:text-5xl lg:text-6xl tracking-tighter mb-4">Our Services</h2>
+                <p class="text-neutral-400 max-w-xl mx-auto">Complete cooling solutions for your home and office — from
+                    repair to installation, we handle it all.</p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- AC Repair -->
+                <div
+                    class="reveal service-card group bg-white/[0.02] border border-white/5 rounded-2xl p-8 cursor-pointer">
+                    <div
+                        class="service-icon w-14 h-14 rounded-xl bg-cool-500/10 border border-cool-500/20 flex items-center justify-center mb-6">
+                        <span class="iconify text-2xl text-cool-400" data-icon="lucide:wind"></span>
+                    </div>
+                    <h3 class="font-syne font-semibold text-xl mb-3">AC Repair</h3>
+                    <p class="text-sm text-neutral-400 leading-relaxed mb-4">All brands, all types — split, inverter,
+                        window AC. Quick diagnosis and reliable repair at your doorstep.</p>
+                    <div
+                        class="flex items-center gap-2 text-cool-400 text-xs uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span>Learn more</span>
+                        <span class="iconify" data-icon="lucide:arrow-right"></span>
+                    </div>
+                </div>
+
+                <!-- AC Gas Filling -->
+                <div class="reveal service-card group bg-white/[0.02] border border-white/5 rounded-2xl p-8 cursor-pointer"
+                    style="transition-delay: 0.1s;">
+                    <div
+                        class="service-icon w-14 h-14 rounded-xl bg-cool-500/10 border border-cool-500/20 flex items-center justify-center mb-6">
+                        <span class="iconify text-2xl text-cool-400" data-icon="lucide:flask-conical"></span>
+                    </div>
+                    <h3 class="font-syne font-semibold text-xl mb-3">AC Gas Filling</h3>
+                    <p class="text-sm text-neutral-400 leading-relaxed mb-4">R22, R410A, R32 gas refilling with leak
+                        detection. Proper pressure testing guaranteed.</p>
+                    <div
+                        class="flex items-center gap-2 text-cool-400 text-xs uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span>Learn more</span>
+                        <span class="iconify" data-icon="lucide:arrow-right"></span>
+                    </div>
+                </div>
+
+                <!-- Fridge Repair -->
+                <div class="reveal service-card group bg-white/[0.02] border border-white/5 rounded-2xl p-8 cursor-pointer"
+                    style="transition-delay: 0.2s;">
+                    <div
+                        class="service-icon w-14 h-14 rounded-xl bg-cool-500/10 border border-cool-500/20 flex items-center justify-center mb-6">
+                        <span class="iconify text-2xl text-cool-400" data-icon="lucide:refrigerator"></span>
+                    </div>
+                    <h3 class="font-syne font-semibold text-xl mb-3">Fridge Repair</h3>
+                    <p class="text-sm text-neutral-400 leading-relaxed mb-4">Refrigerator not cooling? Compressor,
+                        thermostat, gas issues — we fix all fridge problems fast.</p>
+                    <div
+                        class="flex items-center gap-2 text-cool-400 text-xs uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span>Learn more</span>
+                        <span class="iconify" data-icon="lucide:arrow-right"></span>
+                    </div>
+                </div>
+
+                <!-- Water Cooler -->
+                <div class="reveal service-card group bg-white/[0.02] border border-white/5 rounded-2xl p-8 cursor-pointer"
+                    style="transition-delay: 0.3s;">
+                    <div
+                        class="service-icon w-14 h-14 rounded-xl bg-cool-500/10 border border-cool-500/20 flex items-center justify-center mb-6">
+                        <span class="iconify text-2xl text-cool-400" data-icon="lucide:cup-soda"></span>
+                    </div>
+                    <h3 class="font-syne font-semibold text-xl mb-3">Water Cooler Service</h3>
+                    <p class="text-sm text-neutral-400 leading-relaxed mb-4">Water cooler repair, cleaning, and
+                        maintenance for offices, mosques, and homes in Faisalabad.</p>
+                    <div
+                        class="flex items-center gap-2 text-cool-400 text-xs uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span>Learn more</span>
+                        <span class="iconify" data-icon="lucide:arrow-right"></span>
+                    </div>
+                </div>
+
+                <!-- AC Maintenance -->
+                <div class="reveal service-card group bg-white/[0.02] border border-white/5 rounded-2xl p-8 cursor-pointer"
+                    style="transition-delay: 0.4s;">
+                    <div
+                        class="service-icon w-14 h-14 rounded-xl bg-cool-500/10 border border-cool-500/20 flex items-center justify-center mb-6">
+                        <span class="iconify text-2xl text-cool-400" data-icon="lucide:wrench"></span>
+                    </div>
+                    <h3 class="font-syne font-semibold text-xl mb-3">AC Maintenance</h3>
+                    <p class="text-sm text-neutral-400 leading-relaxed mb-4">Regular AC servicing — filter cleaning,
+                        coil wash, gas check. Keep your AC running like new.</p>
+                    <div
+                        class="flex items-center gap-2 text-cool-400 text-xs uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span>Learn more</span>
+                        <span class="iconify" data-icon="lucide:arrow-right"></span>
+                    </div>
+                </div>
+
+                <!-- Sale & Purchase -->
+                <div class="reveal service-card group bg-white/[0.02] border border-white/5 rounded-2xl p-8 cursor-pointer"
+                    style="transition-delay: 0.5s;">
+                    <div
+                        class="service-icon w-14 h-14 rounded-xl bg-cool-500/10 border border-cool-500/20 flex items-center justify-center mb-6">
+                        <span class="iconify text-2xl text-cool-400" data-icon="lucide:repeat"></span>
+                    </div>
+                    <h3 class="font-syne font-semibold text-xl mb-3">Sale & Purchase</h3>
+                    <p class="text-sm text-neutral-400 leading-relaxed mb-4">Buy or sell your AC at best prices. New and
+                        used ACs available with warranty and installation.</p>
+                    <div
+                        class="flex items-center gap-2 text-cool-400 text-xs uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span>Learn more</span>
+                        <span class="iconify" data-icon="lucide:arrow-right"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section id="why-us" class="relative py-24 px-6">
+        <div
+            class="absolute inset-0 bg-gradient-to-b from-transparent via-cool-500/[0.02] to-transparent pointer-events-none">
+        </div>
+        <div class="max-w-6xl mx-auto relative">
+            <div class="reveal text-center mb-16">
+                <span class="inline-block text-xs uppercase tracking-[0.3em] text-cool-400 mb-4">Why Choose Us</span>
+                <h2 class="font-syne font-bold text-3xl md:text-5xl lg:text-6xl tracking-tighter mb-4">Faisalabad Trusts
+                    Us</h2>
+                <p class="text-neutral-400 max-w-xl mx-auto">Here's why thousands of customers in Faisalabad choose
+                    Expert Cool for their cooling needs.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Feature 1 -->
+                <div class="reveal flex gap-6 bg-white/[0.02] border border-white/5 rounded-2xl p-8">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-cool-500/10 flex items-center justify-center">
+                        <span class="iconify text-xl text-cool-400" data-icon="lucide:zap"></span>
+                    </div>
+                    <div>
+                        <h3 class="font-syne font-semibold text-lg mb-2">Same Day Service</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed">Call us in the morning, get your AC fixed by
+                            evening. We prioritize urgent requests in Faisalabad.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="reveal flex gap-6 bg-white/[0.02] border border-white/5 rounded-2xl p-8"
+                    style="transition-delay: 0.1s;">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-cool-500/10 flex items-center justify-center">
+                        <span class="iconify text-xl text-cool-400" data-icon="lucide:badge-indian-rupee"></span>
+                    </div>
+                    <div>
+                        <h3 class="font-syne font-semibold text-lg mb-2">Affordable Pricing</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed">No hidden charges, no overpricing. We offer
+                            the most competitive rates in Faisalabad market.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="reveal flex gap-6 bg-white/[0.02] border border-white/5 rounded-2xl p-8"
+                    style="transition-delay: 0.2s;">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-cool-500/10 flex items-center justify-center">
+                        <span class="iconify text-xl text-cool-400" data-icon="lucide:award"></span>
+                    </div>
+                    <div>
+                        <h3 class="font-syne font-semibold text-lg mb-2">Experienced Technician</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed">8+ years of hands-on experience with all AC
+                            brands — Haier, Dawlance, TCL, Gree, Orient and more.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="reveal flex gap-6 bg-white/[0.02] border border-white/5 rounded-2xl p-8"
+                    style="transition-delay: 0.3s;">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-cool-500/10 flex items-center justify-center">
+                        <span class="iconify text-xl text-cool-400" data-icon="lucide:shield-check"></span>
+                    </div>
+                    <div>
+                        <h3 class="font-syne font-semibold text-lg mb-2">Service Warranty</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed">We stand behind our work. Get 30-day
+                            warranty on all repair services for your peace of mind.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="reveal flex gap-6 bg-white/[0.02] border border-white/5 rounded-2xl p-8"
+                    style="transition-delay: 0.4s;">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-cool-500/10 flex items-center justify-center">
+                        <span class="iconify text-xl text-cool-400" data-icon="lucide:map-pin"></span>
+                    </div>
+                    <div>
+                        <h3 class="font-syne font-semibold text-lg mb-2">All Faisalabad Covered</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed">We serve all areas — Ghulam Muhammad Abad,
+                            Madina Town, Peoples Colony, D-Type, Sattellite Town, and more.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="reveal flex gap-6 bg-white/[0.02] border border-white/5 rounded-2xl p-8"
+                    style="transition-delay: 0.5s;">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-cool-500/10 flex items-center justify-center">
+                        <span class="iconify text-xl text-cool-400" data-icon="lucide:headphones"></span>
+                    </div>
+                    <div>
+                        <h3 class="font-syne font-semibold text-lg mb-2">24/7 Availability</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed">AC stopped working at midnight? No worries.
+                            We're just a call away, day or night.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="process" class="relative py-24 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="reveal text-center mb-16">
+                <span class="inline-block text-xs uppercase tracking-[0.3em] text-cool-400 mb-4">Simple Process</span>
+                <h2 class="font-syne font-bold text-3xl md:text-5xl lg:text-6xl tracking-tighter mb-4">How It Works</h2>
+                <p class="text-neutral-400 max-w-xl mx-auto">Getting your AC fixed is as easy as 1-2-3.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                <!-- Connector line (desktop) -->
+                <div
+                    class="hidden md:block absolute top-16 left-[20%] right-[20%] h-px bg-gradient-to-r from-transparent via-cool-500/30 to-transparent">
+                </div>
+
+                <!-- Step 1 -->
+                <div class="reveal text-center relative">
+                    <div
+                        class="w-14 h-14 rounded-full bg-cool-500 text-black font-syne font-bold text-xl flex items-center justify-center mx-auto mb-6 relative z-10">
+                        1</div>
+                    <h3 class="font-syne font-semibold text-xl mb-3">Call or WhatsApp</h3>
+                    <p class="text-sm text-neutral-400 leading-relaxed">Tell us your problem — AC not cooling, gas
+                        issue, or anything else. Send a photo for faster diagnosis.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="reveal text-center relative" style="transition-delay: 0.15s;">
+                    <div
+                        class="w-14 h-14 rounded-full bg-cool-500 text-black font-syne font-bold text-xl flex items-center justify-center mx-auto mb-6 relative z-10">
+                        2</div>
+                    <h3 class="font-syne font-semibold text-xl mb-3">Free Inspection</h3>
+                    <p class="text-sm text-neutral-400 leading-relaxed">Our technician visits your location, inspects
+                        the problem, and gives you an honest price quote.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="reveal text-center relative" style="transition-delay: 0.3s;">
+                    <div
+                        class="w-14 h-14 rounded-full bg-cool-500 text-black font-syne font-bold text-xl flex items-center justify-center mx-auto mb-6 relative z-10">
+                        3</div>
+                    <h3 class="font-syne font-semibold text-xl mb-3">Get It Fixed</h3>
+                    <p class="text-sm text-neutral-400 leading-relaxed">We repair on the spot with genuine parts. Pay
+                        only when you're satisfied. Enjoy the cool breeze!</p>
+                </div>
+            </div>
+
+            <div class="reveal text-center mt-12">
+                <a href="tel:+923001234567"
+                    class="cta-btn inline-flex items-center gap-3 bg-cool-500 text-black text-sm font-semibold uppercase tracking-widest px-8 py-4 rounded-xl hover:bg-cool-400 transition-colors duration-300">
+                    <span class="iconify text-lg" data-icon="lucide:phone"></span>
+                    Start Now — It's Free
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS / TESTIMONIALS -->
+    <section id="reviews" class="relative py-24 px-6 overflow-hidden">
+        <div
+            class="absolute inset-0 bg-gradient-to-b from-transparent via-cool-500/[0.02] to-transparent pointer-events-none">
+        </div>
+        <div class="max-w-6xl mx-auto relative">
+            <div class="reveal text-center mb-16">
+                <span class="inline-block text-xs uppercase tracking-[0.3em] text-cool-400 mb-4">Testimonials</span>
+                <h2 class="font-syne font-bold text-3xl md:text-5xl lg:text-6xl tracking-tighter mb-4">What Customers
+                    Say</h2>
+                <p class="text-neutral-400 max-w-xl mx-auto">Real reviews from real customers across Faisalabad.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Review 1 -->
+                <div class="reveal bg-white/[0.02] border border-white/5 rounded-2xl p-8">
+                    <div class="flex gap-1 mb-4">
+                        <span class="iconify text-amber-400" data-icon="lucide:star"></span>
+                        <span class="iconify text-amber-400" data-icon="lucide:star"></span>
+                        <span class="iconify text-amber-400" data-icon="lucide:star"></span>
+                        <span class="iconify text-amber-400" data-icon="lucide:star"></span>
+                        <span class="iconify text-amber-400" data-icon="lucide:star"></span>
+                    </div>
+                    <p class="text-sm text-neutral-300 leading-relaxed mb-6">"My AC was not cooling at all. Called
+                        Expert Cool and they came within 1 hour. Gas was low, they filled it and cleaned the whole unit.
+                        Now it's running like new! Very honest pricing."</p>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-full bg-cool-500/10 flex items-center justify-center text-cool-400 font-syne font-bold text-sm">
+                            AH</div>
+                        <div>
+                            <div class="text-sm font-medium">Ahmed Hassan</div>
+                            <div class="text-xs text-neutral-500">Peoples Colony, FSD</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="reveal bg-white/[0.02] border border-white/5 rounded-2xl p-8"
+                    style="transition-delay: 0.1s;">
+                    <div class="flex gap-1 mb-4">
+                        <span class="iconify text-amber-400" data-icon="lucide:star"></span>
+                        <span class="iconify text-amber-400" data-icon="lucide:star"></span>
+                        <span class="iconify text-amber-400" data-icon="lucide:star"></span>
+                        <span class="iconify text-amber-400" data-icon="lucide:star"></span>
+                        <span class="iconify text-amber-400" data-icon="lucide:star"></span>
+                    </div>
+                    <p class="text-sm text-neutral-300 leading-relaxed mb-6">"Best fridge repair service in Faisalabad!
+                        My Dawlance fridge compressor was making noise. They replaced it at a very reasonable price.
+                        Highly recommend for any cooling issue."</p>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-full bg-cool-500/10 flex items-center justify-center text-cool-400 font-syne font-bold text-sm">
+                            SK</div>
+                        <div>
+                            <div class="text-sm font-medium">Sana Khan</div>
+                            <div class="text-xs text-neutral-500">Madina Town, FSD</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="reveal bg-white/[0.02] border border-white/5 rounded-2xl p-8"
+                    style="transition-delay: 0.2s;">
+                    <div class="flex gap-1 mb-4">
+                        <span class="iconify text-amber-400" data-icon="lucide:star"></span>
+                        <span class="iconify text-amber-400" data-icon="lucide:star"></span>
+                        <span class="iconify text-amber-400" data-icon="lucide:star"></span>
+                        <span class="iconify text-amber-400" data-icon="lucide:star"></span>
+                        <span class="iconify text-amber-400" data-icon="lucide:star"></span>
+                    </div>
+                    <p class="text-sm text-neutral-300 leading-relaxed mb-6">"Bought a used inverter AC from them at
+                        great price. They installed it perfectly and gave 15 days checking warranty. Very professional
+                        and trustworthy. Will use again for sure!"</p>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-full bg-cool-500/10 flex items-center justify-center text-cool-400 font-syne font-bold text-sm">
+                            MR</div>
+                        <div>
+                            <div class="text-sm font-medium">Muhammad Rizwan</div>
+                            <div class="text-xs text-neutral-500">Ghulam Muhammad Abad, FSD</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google Rating -->
+            <div class="reveal text-center mt-12 flex items-center justify-center gap-3">
+                <div class="flex gap-0.5">
+                    <span class="iconify text-amber-400 text-lg" data-icon="lucide:star"></span>
+                    <span class="iconify text-amber-400 text-lg" data-icon="lucide:star"></span>
+                    <span class="iconify text-amber-400 text-lg" data-icon="lucide:star"></span>
+                    <span class="iconify text-amber-400 text-lg" data-icon="lucide:star"></span>
+                    <span class="iconify text-amber-400 text-lg" data-icon="lucide:star"></span>
+                </div>
+                <span class="text-sm text-neutral-400">5.0 Rating on Google Maps</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- BRANDS WE SERVICE -->
+    <section class="relative py-16 px-6 border-y border-white/5">
+        <div class="max-w-5xl mx-auto">
+            <div class="reveal text-center mb-10">
+                <span class="text-xs uppercase tracking-[0.3em] text-neutral-500">Brands We Service</span>
+            </div>
+            <div class="reveal flex flex-wrap items-center justify-center gap-8 md:gap-12">
+                <span
+                    class="text-neutral-500 font-syne font-semibold text-lg tracking-tight hover:text-neutral-300 transition-colors">Haier</span>
+                <span class="text-neutral-600">|</span>
+                <span
+                    class="text-neutral-500 font-syne font-semibold text-lg tracking-tight hover:text-neutral-300 transition-colors">Dawlance</span>
+                <span class="text-neutral-600">|</span>
+                <span
+                    class="text-neutral-500 font-syne font-semibold text-lg tracking-tight hover:text-neutral-300 transition-colors">TCL</span>
+                <span class="text-neutral-600">|</span>
+                <span
+                    class="text-neutral-500 font-syne font-semibold text-lg tracking-tight hover:text-neutral-300 transition-colors">Gree</span>
+                <span class="text-neutral-600">|</span>
+                <span
+                    class="text-neutral-500 font-syne font-semibold text-lg tracking-tight hover:text-neutral-300 transition-colors">Orient</span>
+                <span class="text-neutral-600">|</span>
+                <span
+                    class="text-neutral-500 font-syne font-semibold text-lg tracking-tight hover:text-neutral-300 transition-colors">Kenwood</span>
+                <span class="text-neutral-600">|</span>
+                <span
+                    class="text-neutral-500 font-syne font-semibold text-lg tracking-tight hover:text-neutral-300 transition-colors">Pel</span>
+                <span class="text-neutral-600">|</span>
+                <span
+                    class="text-neutral-500 font-syne font-semibold text-lg tracking-tight hover:text-neutral-300 transition-colors">Samsung</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="relative py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="reveal text-center mb-16">
+                <span class="inline-block text-xs uppercase tracking-[0.3em] text-cool-400 mb-4">Get In Touch</span>
+                <h2 class="font-syne font-bold text-3xl md:text-5xl lg:text-6xl tracking-tighter mb-4">Contact Us Now
+                </h2>
+                <p class="text-neutral-400 max-w-xl mx-auto">Don't suffer in the heat. Reach out and we'll be at your
+                    door in no time.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Contact Info + Form -->
+                <div class="reveal space-y-6">
+                    <!-- Phone -->
+                    <a href="tel:+923001234567"
+                        class="flex items-center gap-5 bg-white/[0.02] border border-white/5 rounded-2xl p-6 hover:bg-cool-500/5 hover:border-cool-500/20 transition-all duration-300 group">
+                        <div
+                            class="w-14 h-14 rounded-xl bg-cool-500/10 border border-cool-500/20 flex items-center justify-center flex-shrink-0 group-hover:bg-cool-500/20 transition-colors">
+                            <span class="iconify text-2xl text-cool-400" data-icon="lucide:phone"></span>
+                        </div>
+                        <div>
+                            <div class="text-xs uppercase tracking-wider text-neutral-500 mb-1">Phone / WhatsApp</div>
+                            <div class="text-lg font-medium group-hover:text-cool-400 transition-colors">+92 300 1234567
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Location -->
+                    <div class="flex items-center gap-5 bg-white/[0.02] border border-white/5 rounded-2xl p-6">
+                        <div
+                            class="w-14 h-14 rounded-xl bg-cool-500/10 border border-cool-500/20 flex items-center justify-center flex-shrink-0">
+                            <span class="iconify text-2xl text-cool-400" data-icon="lucide:map-pin"></span>
+                        </div>
+                        <div>
+                            <div class="text-xs uppercase tracking-wider text-neutral-500 mb-1">Location</div>
+                            <div class="text-lg font-medium">Faisalabad, Pakistan</div>
+                        </div>
+                    </div>
+
+                    <!-- Hours -->
+                    <div class="flex items-center gap-5 bg-white/[0.02] border border-white/5 rounded-2xl p-6">
+                        <div
+                            class="w-14 h-14 rounded-xl bg-cool-500/10 border border-cool-500/20 flex items-center justify-center flex-shrink-0">
+                            <span class="iconify text-2xl text-cool-400" data-icon="lucide:clock"></span>
+                        </div>
+                        <div>
+                            <div class="text-xs uppercase tracking-wider text-neutral-500 mb-1">Working Hours</div>
+                            <div class="text-lg font-medium">24/7 — Always Available</div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Form -->
+                    <form id="contactForm" class="bg-white/[0.02] border border-white/5 rounded-2xl p-6 space-y-4">
+                        <h3 class="font-syne font-semibold text-lg mb-2">Send a Quick Message</h3>
+                        <input type="text" id="formName" placeholder="Your Name" required
+                            class="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-cool-500/50 transition-colors">
+                        <input type="tel" id="formPhone" placeholder="Phone / WhatsApp Number" required
+                            class="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-cool-500/50 transition-colors">
+                        <select id="formService"
+                            class="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-sm text-neutral-400 focus:outline-none focus:border-cool-500/50 transition-colors appearance-none cursor-pointer"
+                            style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23737373%22 stroke-width=%222%22><polyline points=%226 9 12 15 18 9%22/></svg>'); background-repeat: no-repeat; background-position: right 16px center;">
+                            <option value="" disabled selected>Select Service</option>
+                            <option value="ac-repair">AC Repair</option>
+                            <option value="gas-filling">AC Gas Filling</option>
+                            <option value="fridge-repair">Fridge Repair</option>
+                            <option value="cooler-repair">Water Cooler Repair</option>
+                            <option value="maintenance">AC Maintenance</option>
+                            <option value="sale-purchase">Sale & Purchase</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <textarea id="formMessage" placeholder="Describe your problem..." rows="3"
+                            class="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-cool-500/50 transition-colors resize-none"></textarea>
+                        <button type="submit"
+                            class="cta-btn w-full flex items-center justify-center gap-2 bg-cool-500 text-black text-sm font-semibold uppercase tracking-widest px-6 py-4 rounded-xl hover:bg-cool-400 transition-colors duration-300">
+                            <span class="iconify" data-icon="lucide:send"></span>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Map -->
+                <div class="reveal rounded-2xl overflow-hidden border border-white/5 h-full min-h-[500px]"
+                    style="transition-delay: 0.15s;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48383335.39098737!2d-5.073911800000005!3d42.25536938382161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x392269ec1283d4df%3A0x37d4691b1da2ca51!2sAc%20Technician%20Expert%20Cool!5e0!3m2!1sen!2s!4v1776394603359!5m2!1sen!2s"
+                        width="100%" height="100%"
+                        style="border:0; min-height:500px; filter: invert(90%) hue-rotate(180deg) brightness(0.9) contrast(1.1);"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="relative py-24 px-6 overflow-hidden">
+        <div
+            class="absolute inset-0 bg-gradient-to-b from-cool-500/[0.03] via-cool-500/[0.06] to-cool-500/[0.03] pointer-events-none">
+        </div>
+        <div class="absolute inset-0 dot-grid pointer-events-none opacity-50"></div>
+        <!-- Glow -->
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cool-500/10 rounded-full blur-[120px] pointer-events-none">
+        </div>
+
+        <div class="reveal relative max-w-3xl mx-auto text-center">
+            <div class="animate-float mb-8">
+                <span class="iconify text-6xl text-cool-400/50" data-icon="lucide:snowflake"></span>
+            </div>
+            <h2 class="font-syne font-bold text-3xl md:text-5xl lg:text-6xl tracking-tighter mb-6">Don't Sweat
+                It.<br><span class="text-cool-400">We'll Fix It.</span></h2>
+            <p class="text-neutral-400 text-lg mb-10 max-w-xl mx-auto">One call is all it takes. Get expert AC, fridge
+                and cooler service at your doorstep in Faisalabad — fast, reliable, and affordable.</p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:+923001234567"
+                    class="cta-btn w-full sm:w-auto flex items-center justify-center gap-3 bg-cool-500 text-black text-sm font-semibold uppercase tracking-widest px-10 py-5 rounded-xl hover:bg-cool-400 transition-colors duration-300 animate-pulse-glow">
+                    <span class="iconify text-xl" data-icon="lucide:phone"></span>
+                    Call +92 300 1234567
+                </a>
+                <a href="https://wa.me/923001234567" target="_blank"
+                    class="w-full sm:w-auto flex items-center justify-center gap-3 border border-green-500/30 text-green-400 text-sm font-medium uppercase tracking-widest px-10 py-5 rounded-xl hover:bg-green-500/10 transition-colors duration-300">
+                    <span class="iconify text-xl" data-icon="lucide:phone"></span>
+                    WhatsApp Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="relative border-t border-white/5 py-16 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-cool-500/10 border border-cool-500/20 flex items-center justify-center">
+                            <span class="iconify text-cool-400 text-xl" data-icon="lucide:snowflake"></span>
+                        </div>
+                        <div>
+                            <span class="font-syne font-bold text-sm tracking-tight">EXPERT COOL</span>
+                            <span class="block text-[10px] text-neutral-500 uppercase tracking-widest">AC
+                                Technician</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-neutral-500 leading-relaxed">Faisalabad's trusted AC, fridge and water cooler
+                        repair expert. Quality service at honest prices since 2015.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-syne font-semibold text-sm mb-4 uppercase tracking-wider">Quick Links</h4>
+                    <div class="space-y-3">
+                        <a href="#services"
+                            class="block text-sm text-neutral-500 hover:text-white transition-colors">Our Services</a>
+                        <a href="#why-us" class="block text-sm text-neutral-500 hover:text-white transition-colors">Why
+                            Choose Us</a>
+                        <a href="#process" class="block text-sm text-neutral-500 hover:text-white transition-colors">How
+                            It Works</a>
+                        <a href="#reviews"
+                            class="block text-sm text-neutral-500 hover:text-white transition-colors">Customer
+                            Reviews</a>
+                        <a href="#contact"
+                            class="block text-sm text-neutral-500 hover:text-white transition-colors">Contact Us</a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-syne font-semibold text-sm mb-4 uppercase tracking-wider">Services</h4>
+                    <div class="space-y-3">
+                        <span class="block text-sm text-neutral-500">AC Repair & Installation</span>
+                        <span class="block text-sm text-neutral-500">AC Gas Filling</span>
+                        <span class="block text-sm text-neutral-500">Fridge Repair</span>
+                        <span class="block text-sm text-neutral-500">Water Cooler Service</span>
+                        <span class="block text-sm text-neutral-500">AC Sale & Purchase</span>
+                        <span class="block text-sm text-neutral-500">Annual Maintenance</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-xs text-neutral-600">© 2025 AC Technician Expert Cool. All rights reserved. Faisalabad,
+                    Pakistan.</p>
+                <div class="flex items-center gap-2 text-xs text-neutral-600">
+                    <span class="iconify text-cool-500/50" data-icon="lucide:snowflake"></span>
+                    <span>Keeping Faisalabad Cool Since 2015</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WhatsApp BUTTON -->
+    <!-- <a class="fixed bottom-6 left-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 hover:bg-green-400 hover:scale-110 transition-all duration-300"
+        <span class="iconify text-2xl text-white" data-icon="lucide:message-circle"></span>
+    </a> -->
+
+    <!-- FLOATING Call Button -->
+    <a href="https://wa.me/923001234567" target="_blank"
+        class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 hover:bg-cool-400 hover:scale-110 transition-all duration-300 animate-pulse-glow"
+        title="Chat on WhatsApp">
+        <span class="iconify text-2xl text-white" data-icon="lucide:phone"></span>
+    </a>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <span class="iconify text-cool-400 text-xl" data-icon="lucide:check-circle"></span>
+        <span id="toastMessage" class="text-sm">Message sent successfully!</span>
+    </div>
+
+    <script>
+        // ===== SNOWFLAKE PARTICLES =====
+        function createSnowflakes() {
+            const container = document.getElementById('snowflakes');
+            const flakes = ['❄', '❅', '❆', '•'];
+            for (let i = 0; i < 15; i++) {
+                const flake = document.createElement('div');
+                flake.className = 'snowflake';
+                flake.textContent = flakes[Math.floor(Math.random() * flakes.length)];
+                flake.style.left = Math.random() * 100 + '%';
+                flake.style.fontSize = (Math.random() * 10 + 6) + 'px';
+                flake.style.animationDuration = (Math.random() * 15 + 10) + 's';
+                flake.style.animationDelay = (Math.random() * 15) + 's';
+                flake.style.opacity = Math.random() * 0.3 + 0.1;
+                container.appendChild(flake);
+            }
+        }
+        createSnowflakes();
+
+        // ===== MOBILE MENU =====
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+        let menuOpen = false;
+
+        menuToggle.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            mobileMenu.classList.toggle('open');
+            menuIcon.setAttribute('data-icon', menuOpen ? 'lucide:x' : 'lucide:menu');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuOpen = false;
+                mobileMenu.classList.remove('open');
+                menuIcon.setAttribute('data-icon', 'lucide:menu');
+            });
+        });
+
+        // ===== SCROLL REVEAL =====
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // ===== COUNTER ANIMATION =====
+        const counters = document.querySelectorAll('.counter');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.getAttribute('data-target'));
+                    if (target) {
+                        animateCounter(entry.target, target);
+                        counterObserver.unobserve(entry.target);
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(c => counterObserver.observe(c));
+
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 60;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current).toLocaleString() + '+';
+            }, 25);
+        }
+
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // ===== NAVBAR SCROLL EFFECT =====
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.style.borderBottomColor = 'rgba(14, 165, 233, 0.1)';
+                nav.style.backgroundColor = 'rgba(10, 10, 10, 0.95)';
+            } else {
+                nav.style.borderBottomColor = 'rgba(255, 255, 255, 0.05)';
+                nav.style.backgroundColor = 'rgba(10, 10, 10, 0.8)';
+            }
+        });
+
+        // ===== TOAST =====
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMessage');
+            toastMsg.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3500);
+        }
+
+        // ===== CONTACT FORM =====
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('formName').value.trim();
+            const phone = document.getElementById('formPhone').value.trim();
+            const service = document.getElementById('formService').value;
+            const message = document.getElementById('formMessage').value.trim();
+
+            if (!name || !phone) {
+                showToast('Please fill in your name and phone number.');
+                return;
+            }
+
+            // Construct WhatsApp message
+            let waMessage = `Assalam o Alaikum! I'm ${name}.`;
+            if (service) waMessage += `\nService: ${service.replace('-', ' ')}`;
+            if (message) waMessage += `\nProblem: ${message}`;
+            waMessage += `\nPhone: ${phone}`;
+
+            const waURL = `https://wa.me/923001234567?text=${encodeURIComponent(waMessage)}`;
+
+            showToast('Redirecting to WhatsApp...');
+            setTimeout(() => {
+                window.open(waURL, '_blank');
+            }, 800);
+
+            this.reset();
+        });
+
+        // ===== ACTIVE NAV HIGHLIGHT =====
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-white');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('text-white');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
