@@ -47,6 +47,7 @@
             background: #0a0a0a;
             color: #ffffff;
             overflow-x: hidden;
+            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><circle cx='16' cy='16' r='14' fill='%230ea5e9' opacity='0.2' stroke='%230ea5e9' stroke-width='1'/><text x='16' y='23' font-size='18' text-anchor='middle' fill='white'>❄</text></svg>") 16 16, auto;
         }
 
         .font-syne {
@@ -175,7 +176,7 @@
         }
 
         .animate-marquee {
-            animation: marquee 30s linear infinite;
+            animation: marquee 10s linear infinite;
         }
 
         .animate-spin-slow {
@@ -260,7 +261,7 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #333;
+            background: #0ea5e9;
             border-radius: 3px;
         }
 
@@ -461,24 +462,23 @@
         </div>
     </nav>
 
-    <!-- Mobile Menu -->
     <div id="mobileMenu"
-        class="mobile-menu fixed inset-0 z-40 bg-[#0a0a0a]/98 backdrop-blur-lg flex flex-col items-center justify-center gap-8">
+        class="mobile-menu fixed inset-0 z-40 bg-[#0a0a0a]/98 backdrop-blur-lg flex flex-col items-center justify-center gap-5">
         <a href="#services"
-            class="text-2xl font-syne font-medium text-neutral-300 hover:text-white transition-colors mobile-link">Services</a>
+            class="text-2xl font-syne font-medium text-neutral-300 hover:text-white transition-colors mobile-link text-center">Services</a>
         <a href="#why-us"
-            class="text-2xl font-syne font-medium text-neutral-300 hover:text-white transition-colors mobile-link">Why
+            class="text-2xl font-syne font-medium text-neutral-300 hover:text-white transition-colors mobile-link text-center">Why
             Us</a>
         <a href="#process"
-            class="text-2xl font-syne font-medium text-neutral-300 hover:text-white transition-colors mobile-link">Process</a>
+            class="text-2xl font-syne font-medium text-neutral-300 hover:text-white transition-colors mobile-link text-center">Process</a>
         <a href="#reviews"
-            class="text-2xl font-syne font-medium text-neutral-300 hover:text-white transition-colors mobile-link">Reviews</a>
+            class="text-2xl font-syne font-medium text-neutral-300 hover:text-white transition-colors mobile-link text-center">Reviews</a>
         <a href="#gallery"
-            class="text-2xl font-syne font-medium text-neutral-300 hover:text-white transition-colors mobile-link">Gallery</a>
+            class="text-2xl font-syne font-medium text-neutral-300 hover:text-white transition-colors mobile-link text-center">Gallery</a>
         <a href="#contact"
-            class="text-2xl font-syne font-medium text-neutral-300 hover:text-white transition-colors mobile-link">Contact</a>
+            class="text-2xl font-syne font-medium text-neutral-300 hover:text-white transition-colors mobile-link text-center">Contact</a>
         <a href="tel:+923001234567"
-            class="cta-btn mt-4 flex items-center gap-2 bg-cool-500 text-black text-sm font-medium uppercase tracking-widest px-8 py-4 rounded-lg">
+            class="cta-btn mt-2 flex items-center gap-2 bg-cool-500 text-black text-sm font-medium uppercase tracking-widest px-8 py-4 rounded-lg">
             <span class="iconify" data-icon="lucide:phone"></span>
             Call Now
         </a>
@@ -515,9 +515,17 @@
                 We deal in <span class="text-white font-medium">Air Conditioning</span> (Wall Mounted, Floor Standing,
                 and Ceiling Hanging)
                 <span class="text-cool-400">Installation, Service, Gas Filling, and PCB Repairing</span>.
-                Expert solutions for <span class="text-white">Water Chillers, Dispensers, Refrigeration,</span> and
+                We also provide services for <span class="text-white"> Refrigeration, Water Chillers, Dispensers,</span>
+                and
                 <span class="text-white">Home Appliances</span> in Faisalabad.
             </p>
+            <!-- <p
+                class="animate-fade-in-d2 text-base sm:text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed text-cool-400">
+                We deal in Air Conditioning (Wall Mounted, Floor Standing,
+                and Ceiling Hanging) Installation, Service, Gas Filling, and PCB Repairing.
+                We also provide services forRefrigeration, Water Chillers, Dispensers, and
+                Home Appliances in Faisalabad.
+            </p> -->
 
             <!-- CTA Buttons -->
             <div class="animate-fade-in-d3 flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
@@ -662,9 +670,9 @@
                     <h3 class="font-syne font-semibold text-xl mb-3">Refrigeration & Deep Freezer</h3>
                     <p class="text-sm text-neutral-400 leading-relaxed mb-4">
                         Professional repair and maintenance for refrigerators and freezers:
-                        <span class="block mt-2">• Gas Filling & Leakage Solutions</span>
-                        <span class="block">• Compressor Exchange</span>
-                        <span class="block">• Freezer Exchange & Repair</span>
+                        <span class="block mt-2 font-medium text-white/80">• Gas Filling & Leakage Solutions</span>
+                        <span class="block font-medium text-white/80">• Compressor Exchange</span>
+                        <span class="block font-medium text-white/80">• Freezer Exchange & Repair</span>
                     </p>
                 </div>
 
@@ -922,23 +930,29 @@
     <!-- ===== MAP & PROCESS COMBINED ===== -->
     <section id="coverage" class="relative py-24 px-6 overflow-hidden">
         <div class="max-w-7xl mx-auto relative">
-            
+
             <!-- Unified Global Header (Large Screens Only) -->
             <div class="hidden lg:block reveal text-center mb-20">
-                <span class="inline-block text-xs uppercase tracking-[0.3em] text-cool-400 mb-4">Coverage & Service</span>
-                <h2 class="font-syne font-bold text-5xl lg:text-6xl tracking-tighter mb-4 text-white">Faisalabad's Most Trusted Network</h2>
-                <p class="text-neutral-500 max-w-2xl mx-auto text-base leading-relaxed">Serving every neighborhood from Gulberg to Madina Town with a fast, transparent 3-step process.</p>
+                <span class="inline-block text-xs uppercase tracking-[0.3em] text-cool-400 mb-4">Coverage &
+                    Service</span>
+                <h2 class="font-syne font-bold text-5xl lg:text-6xl tracking-tighter mb-4 text-white">Faisalabad's Most
+                    Trusted Network</h2>
+                <p class="text-neutral-500 max-w-2xl mx-auto text-base leading-relaxed">Serving every neighborhood from
+                    Gulberg to Madina Town with a fast, transparent 3-step process.</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                
+
                 <!-- Left: Map Section -->
                 <div class="reveal">
                     <!-- Column Header (Mobile Only) -->
                     <div class="mb-10 text-center lg:hidden">
-                        <span class="inline-block text-xs uppercase tracking-[0.3em] text-cool-400 mb-4">Service Coverage</span>
-                        <h2 class="font-syne font-bold text-3xl md:text-5xl tracking-tighter mb-4 text-white">We Cover All of Faisalabad</h2>
-                        <p class="text-neutral-500 max-w-lg mx-auto text-sm leading-relaxed">From Gulberg to Satellite Town — our AC technicians reach every corner of the city, fast.</p>
+                        <span class="inline-block text-xs uppercase tracking-[0.3em] text-cool-400 mb-4">Service
+                            Coverage</span>
+                        <h2 class="font-syne font-bold text-3xl md:text-5xl tracking-tighter mb-4 text-white">We Cover
+                            All of Faisalabad</h2>
+                        <p class="text-neutral-500 max-w-lg mx-auto text-sm leading-relaxed">From Gulberg to Satellite
+                            Town — our AC technicians reach every corner of the city, fast.</p>
                     </div>
 
                     <div class="map-wrapper shadow-2xl shadow-cool-500/5">
@@ -958,22 +972,22 @@
 
                             <polygon
                                 points="340,58 460,80 548,148 572,260 548,368 460,440 340,462 220,440 132,368 108,260 132,148 220,80"
-                                fill="#0ea5e9" fill-opacity="0.06" stroke="#0ea5e9" stroke-width="1.2" stroke-opacity="0.35"
-                                stroke-dasharray="7 5" />
+                                fill="#0ea5e9" fill-opacity="0.06" stroke="#0ea5e9" stroke-width="1.2"
+                                stroke-opacity="0.35" stroke-dasharray="7 5" />
 
                             <circle cx="340" cy="260" r="70" fill="#0ea5e9" fill-opacity="0.07" />
                             <circle cx="340" cy="260" r="40" fill="#0ea5e9" fill-opacity="0.07" />
 
                             <g class="map-icon-float" style="transform-origin:340px 220px">
-                                <circle class="pin-ring" cx="340" cy="220" r="26" fill="none" stroke="#0ea5e9" stroke-width="1"
-                                    opacity="0.5" />
+                                <circle class="pin-ring" cx="340" cy="220" r="26" fill="none" stroke="#0ea5e9"
+                                    stroke-width="1" opacity="0.5" />
                                 <circle cx="340" cy="220" r="18" fill="#0ea5e9" fill-opacity="0.15" stroke="#0ea5e9"
                                     stroke-width="1.2" stroke-opacity="0.7" />
                                 <path
                                     d="M340 209 L337 214 L331 214 L336 218 L334 224 L340 220 L346 224 L344 218 L349 214 L343 214 Z"
                                     fill="#0ea5e9" opacity="0.9" />
-                                <text x="340" y="248" text-anchor="middle" class="font-syne" font-weight="700" font-size="11"
-                                    fill="#0ea5e9" opacity="0.9" letter-spacing="2">FAISALABAD</text>
+                                <text x="340" y="248" text-anchor="middle" class="font-syne" font-weight="700"
+                                    font-size="11" fill="#0ea5e9" opacity="0.9" letter-spacing="2">FAISALABAD</text>
                             </g>
 
                             <g class="area-dot" opacity="0.85">
@@ -1059,17 +1073,17 @@
                             <path
                                 d="M34 28 L33.2 29.6 L31.4 29.6 L32.8 30.6 L32.2 32.4 L34 31.3 L35.8 32.4 L35.2 30.6 L36.6 29.6 L34.8 29.6 Z"
                                 fill="#0ea5e9" />
-                            <text x="44" y="35" font-family="sans-serif" font-size="10" fill="#7dd3fc" letter-spacing="1.8"
-                                font-weight="500">SERVICE COVERAGE</text>
+                            <text x="44" y="35" font-family="sans-serif" font-size="10" fill="#7dd3fc"
+                                letter-spacing="1.8" font-weight="500">SERVICE COVERAGE</text>
 
-                            <line x1="108" y1="260" x2="65" y2="260" stroke="#0ea5e9" stroke-width="0.5" stroke-opacity="0.25"
-                                stroke-dasharray="3 3" />
-                            <line x1="572" y1="260" x2="615" y2="260" stroke="#0ea5e9" stroke-width="0.5" stroke-opacity="0.25"
-                                stroke-dasharray="3 3" />
-                            <line x1="340" y1="58" x2="340" y2="20" stroke="#0ea5e9" stroke-width="0.5" stroke-opacity="0.25"
-                                stroke-dasharray="3 3" />
-                            <line x1="340" y1="462" x2="340" y2="500" stroke="#0ea5e9" stroke-width="0.5" stroke-opacity="0.25"
-                                stroke-dasharray="3 3" />
+                            <line x1="108" y1="260" x2="65" y2="260" stroke="#0ea5e9" stroke-width="0.5"
+                                stroke-opacity="0.25" stroke-dasharray="3 3" />
+                            <line x1="572" y1="260" x2="615" y2="260" stroke="#0ea5e9" stroke-width="0.5"
+                                stroke-opacity="0.25" stroke-dasharray="3 3" />
+                            <line x1="340" y1="58" x2="340" y2="20" stroke="#0ea5e9" stroke-width="0.5"
+                                stroke-opacity="0.25" stroke-dasharray="3 3" />
+                            <line x1="340" y1="462" x2="340" y2="500" stroke="#0ea5e9" stroke-width="0.5"
+                                stroke-opacity="0.25" stroke-dasharray="3 3" />
                         </svg>
                     </div>
                 </div>
@@ -1078,36 +1092,48 @@
                 <div class="reveal" id="process">
                     <!-- Column Header (Mobile Only) -->
                     <div class="mb-10 text-center lg:hidden">
-                        <span class="inline-block text-xs uppercase tracking-[0.3em] text-cool-400 mb-4">Simple Process</span>
-                        <h2 class="font-syne font-bold text-3xl md:text-5xl tracking-tighter mb-4 text-white">How It Works</h2>
-                        <p class="text-neutral-500 max-w-lg mx-auto text-sm leading-relaxed">Getting your cooling system fixed is as easy as 1-2-3.</p>
+                        <span class="inline-block text-xs uppercase tracking-[0.3em] text-cool-400 mb-4">Simple
+                            Process</span>
+                        <h2 class="font-syne font-bold text-3xl md:text-5xl tracking-tighter mb-4 text-white">How It
+                            Works</h2>
+                        <p class="text-neutral-500 max-w-lg mx-auto text-sm leading-relaxed">Getting your cooling system
+                            fixed is as easy as 1-2-3.</p>
                     </div>
 
                     <div class="space-y-8 lg:mt-6">
                         <!-- Step 1 -->
                         <div class="flex gap-6 group">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-cool-500 text-black font-syne font-bold text-lg flex items-center justify-center transition-transform group-hover:scale-110">1</div>
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full bg-cool-500 text-black font-syne font-bold text-lg flex items-center justify-center transition-transform group-hover:scale-110">
+                                1</div>
                             <div>
                                 <h3 class="font-syne font-semibold text-xl text-white mb-2">Call or WhatsApp</h3>
-                                <p class="text-sm text-neutral-400 leading-relaxed">Tell us your problem — AC not cooling, gas issue, or anything else. We are available 24/7 in Faisalabad.</p>
+                                <p class="text-sm text-neutral-400 leading-relaxed">Tell us your problem — AC not
+                                    cooling, gas issue, or anything else. We are available 24/7 in Faisalabad.</p>
                             </div>
                         </div>
 
                         <!-- Step 2 -->
                         <div class="flex gap-6 group">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-cool-500 text-black font-syne font-bold text-lg flex items-center justify-center transition-transform group-hover:scale-110">2</div>
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full bg-cool-500 text-black font-syne font-bold text-lg flex items-center justify-center transition-transform group-hover:scale-110">
+                                2</div>
                             <div>
                                 <h3 class="font-syne font-semibold text-xl text-white mb-2">Free Inspection</h3>
-                                <p class="text-sm text-neutral-400 leading-relaxed">Our expert technician visits your location, diagnose the issue, and provides an honest upfront quote.</p>
+                                <p class="text-sm text-neutral-400 leading-relaxed">Our expert technician visits your
+                                    location, diagnose the issue, and provides an honest upfront quote.</p>
                             </div>
                         </div>
 
                         <!-- Step 3 -->
                         <div class="flex gap-6 group">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-cool-500 text-black font-syne font-bold text-lg flex items-center justify-center transition-transform group-hover:scale-110">3</div>
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full bg-cool-500 text-black font-syne font-bold text-lg flex items-center justify-center transition-transform group-hover:scale-110">
+                                3</div>
                             <div>
                                 <h3 class="font-syne font-semibold text-xl text-white mb-2">Get It Fixed</h3>
-                                <p class="text-sm text-neutral-400 leading-relaxed">We repair on the spot using genuine parts. Pay only when you are 100% satisfied with the work.</p>
+                                <p class="text-sm text-neutral-400 leading-relaxed">We repair on the spot using genuine
+                                    parts. Pay only when you are 100% satisfied with the work.</p>
                             </div>
                         </div>
                     </div>
@@ -1231,30 +1257,36 @@
             <div class="reveal text-center mb-10">
                 <span class="text-xs uppercase tracking-[0.3em] text-neutral-500">Brands We Service</span>
             </div>
-            <div class="reveal flex flex-wrap items-center justify-center gap-8 md:gap-12">
-                <span
-                    class="text-neutral-500 font-syne font-semibold text-lg tracking-tight hover:text-neutral-300 transition-colors">Haier</span>
-                <span class="text-neutral-600">|</span>
-                <span
-                    class="text-neutral-500 font-syne font-semibold text-lg tracking-tight hover:text-neutral-300 transition-colors">Dawlance</span>
-                <span class="text-neutral-600">|</span>
-                <span
-                    class="text-neutral-500 font-syne font-semibold text-lg tracking-tight hover:text-neutral-300 transition-colors">TCL</span>
-                <span class="text-neutral-600">|</span>
-                <span
-                    class="text-neutral-500 font-syne font-semibold text-lg tracking-tight hover:text-neutral-300 transition-colors">Gree</span>
-                <span class="text-neutral-600">|</span>
-                <span
-                    class="text-neutral-500 font-syne font-semibold text-lg tracking-tight hover:text-neutral-300 transition-colors">Orient</span>
-                <span class="text-neutral-600">|</span>
-                <span
-                    class="text-neutral-500 font-syne font-semibold text-lg tracking-tight hover:text-neutral-300 transition-colors">Kenwood</span>
-                <span class="text-neutral-600">|</span>
-                <span
-                    class="text-neutral-500 font-syne font-semibold text-lg tracking-tight hover:text-neutral-300 transition-colors">Pel</span>
-                <span class="text-neutral-600">|</span>
-                <span
-                    class="text-neutral-500 font-syne font-semibold text-lg tracking-tight hover:text-neutral-300 transition-colors">Samsung</span>
+            <div class="reveal flex flex-wrap items-center justify-center gap-10 md:gap-16">
+                <!-- Haier -->
+                <img src="images/Haier-Logo.wine.png" alt="Haier"
+                    class="h-12 md:h-12 object-contain transition-all duration-300">
+
+                <!-- Dawlance -->
+                <img src="images/dawlance.png" alt="Dawlance"
+                    class="h-12 md:h-20 object-contain transition-all duration-300">
+
+                <!-- TCL -->
+                <img src="images/TCL_Corporation-Logo.wine.png" alt="TCL"
+                    class="h-12 object-contain transition-all duration-300">
+
+                <!-- Gree -->
+                <img src="images/gree.png" alt="Gree" class="h-12 md:h-16 object-contain transition-all duration-300">
+
+                <!-- Orient -->
+                <img src="images/orient-logo.svg" alt="Orient"
+                    class="h-7 md:h-9 object-contain transition-all duration-300">
+
+                <!-- Kenwood -->
+                <img src="images/kenwood_190x@2x.avif" alt="Kenwood"
+                    class="h-7 md:h-9 object-contain transition-all duration-300">
+
+                <!-- Pel -->
+                <img src="images/pel.avif" alt="Pel" class="h-12 object-contain transition-all duration-300">
+
+                <!-- Samsung -->
+                <img src="images/300_186_1.avif" alt="Samsung"
+                    class="h-12 object-contain transition-all duration-300">
             </div>
         </div>
     </section>
@@ -1406,6 +1438,30 @@
                     </div>
                     <p class="text-sm text-neutral-500 leading-relaxed">Faisalabad's trusted AC, fridge and water cooler
                         repair expert. Quality service at honest prices since 2015.</p>
+                    
+                    <!-- Social Icons -->
+                    <div class="flex items-center gap-4 mt-6">
+                        <!-- Instagram -->
+                        <a href="#" title="Instagram"
+                            class="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/5 flex items-center justify-center hover:bg-gradient-to-tr hover:from-[#f9ce34] hover:via-[#ee2a7b] hover:to-[#6228d7] hover:border-transparent transition-all duration-300 group">
+                            <span class="iconify text-xl" data-icon="skill-icons:instagram"></span>
+                        </a>
+                        <!-- Facebook -->
+                        <a href="#" title="Facebook"
+                            class="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/5 flex items-center justify-center hover:bg-[#1877F2]/10 hover:border-[#1877F2]/30 transition-all duration-300 group">
+                            <span class="iconify text-xl" data-icon="logos:facebook"></span>
+                        </a>
+                        <!-- YouTube -->
+                        <a href="#" title="YouTube"
+                            class="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/5 flex items-center justify-center hover:bg-[#FF0000]/10 hover:border-[#FF0000]/30 transition-all duration-300 group">
+                            <span class="iconify text-2xl" data-icon="logos:youtube-icon"></span>
+                        </a>
+                        <!-- TikTok -->
+                        <a href="#" title="TikTok"
+                            class="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/5 flex items-center justify-center hover:bg-black/40 hover:border-white/20 transition-all duration-300 group">
+                            <span class="iconify text-xl" data-icon="logos:tiktok-icon"></span>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Quick Links -->
