@@ -490,17 +490,17 @@ export default function Home() {
       </section>
 
       {/* CONTACT SECTION */}
-      <section id="contact" className="relative py-16 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="reveal text-center mb-16">
+     <section id="contact" className="relative py-12 px-6">
+      <div className="max-w-6xl mx-auto">
+          <div className="reveal text-center mb-10">
             <span className="inline-block text-xs uppercase tracking-[0.3em] text-cool-400 mb-4">Get In Touch</span>
             <h2 className="font-syne font-bold text-3xl md:text-5xl lg:text-6xl tracking-tighter mb-4">Contact Us Now</h2>
             <p className="text-neutral-400 max-w-xl mx-auto">Don't suffer in the heat. Reach out and we'll be at your door in no time.</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="reveal space-y-6">
-              <form onSubmit={handleFormSubmit} className="bg-white/[0.02] border border-white/5 rounded-2xl p-6 space-y-4">
+            <div className="reveal space-y-4">
+              <form onSubmit={handleFormSubmit} className="bg-white/[0.02] border border-white/5 rounded-2xl p-5 space-y-3">
                 <h3 className="font-syne font-semibold text-lg mb-2">Send a Quick Message</h3>
                 <input
                   type="text"
@@ -545,40 +545,40 @@ export default function Home() {
                   Send Message
                 </button>
               </form>
-              <a href="tel:+923017067764" className="flex items-center gap-5 bg-white/[0.02] border border-white/5 rounded-2xl p-6 hover:bg-cool-500/5 hover:border-cool-500/20 transition-all duration-300 group">
-                <div className="w-14 h-14 rounded-xl bg-cool-500/10 border border-cool-500/20 flex items-center justify-center flex-shrink-0 group-hover:bg-cool-500/20 transition-colors">
-                  <Icon icon="lucide:phone" className="text-2xl text-cool-400" />
+              <a href="tel:+923017067764" className="flex items-center gap-4 bg-white/[0.02] border border-white/5 rounded-2xl p-4 hover:bg-cool-500/5 hover:border-cool-500/20 transition-all duration-300 group">
+                <div className="w-11 h-11 rounded-xl bg-cool-500/10 border border-cool-500/20 flex items-center justify-center flex-shrink-0 group-hover:bg-cool-500/20 transition-colors">
+                  <Icon icon="lucide:phone" className="text-xl text-cool-400" />
                 </div>
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-neutral-500 mb-1">Phone / WhatsApp</div>
-                  <div className="text-lg font-medium group-hover:text-cool-400 transition-colors">+92 301 7067764</div>
+                  <div className="text-[10px] uppercase tracking-wider text-neutral-500 mb-0.5">Phone / WhatsApp</div>
+                  <div className="text-base font-medium group-hover:text-cool-400 transition-colors">+92 301 7067764</div>
                 </div>
               </a>
-              <div className="flex items-center gap-5 bg-white/[0.02] border border-white/5 rounded-2xl p-6">
-                <div className="w-14 h-14 rounded-xl bg-cool-500/10 border border-cool-500/20 flex items-center justify-center flex-shrink-0">
-                  <Icon icon="lucide:map-pin" className="text-2xl text-cool-400" />
+              <div className="flex items-center gap-4 bg-white/[0.02] border border-white/5 rounded-2xl p-4">
+                <div className="w-11 h-11 rounded-xl bg-cool-500/10 border border-cool-500/20 flex items-center justify-center flex-shrink-0">
+                  <Icon icon="lucide:map-pin" className="text-xl text-cool-400" />
                 </div>
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-neutral-500 mb-1">Location</div>
-                  <div className="text-lg font-medium">Faisalabad, Pakistan</div>
+                  <div className="text-[10px] uppercase tracking-wider text-neutral-500 mb-0.5">Location</div>
+                  <div className="text-base font-medium">Faisalabad, Pakistan</div>
                 </div>
               </div>
-              <div className="flex items-center gap-5 bg-white/[0.02] border border-white/5 rounded-2xl p-6">
-                <div className="w-14 h-14 rounded-xl bg-cool-500/10 border border-cool-500/20 flex items-center justify-center flex-shrink-0">
-                  <Icon icon="lucide:clock" className="text-2xl text-cool-400" />
+              <div className="flex items-center gap-4 bg-white/[0.02] border border-white/5 rounded-2xl p-4">
+                <div className="w-11 h-11 rounded-xl bg-cool-500/10 border border-cool-500/20 flex items-center justify-center flex-shrink-0">
+                  <Icon icon="lucide:clock" className="text-xl text-cool-400" />
                 </div>
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-neutral-500 mb-1">Working Hours</div>
-                  <div className="text-lg font-medium">24/7 — Always Available</div>
+                  <div className="text-[10px] uppercase tracking-wider text-neutral-500 mb-0.5">Working Hours</div>
+                  <div className="text-base font-medium">24/7 — Always Available</div>
                 </div>
               </div>
 
 
             </div>
 
-            <div className="reveal rounded-2xl overflow-hidden border border-white/5 h-full min-h-[500px]" style={{ transitionDelay: '0.15s' }}>
+            <div className="reveal rounded-2xl overflow-hidden border border-white/5 h-full min-h-[400px]" style={{ transitionDelay: '0.15s' }}>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48383335.39098737!2d-5.073911800000005!3d42.25536938382161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x392269ec1283d4df%3A0x37d4691b1da2ca51!2sAc%20Technician%20Expert%20Cool!5e0!3m2!1sen!2s!4v1776394603359!5m2!1sen!2s"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41415.513531426506!2d73.0941252791016!3d31.441259199999987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x392269ec1283d4df%3A0x37d4691b1da2ca51!2sAc%20Technician%20Expert%20Cool!5e1!3m2!1sen!2s!4v1776838805282!5m2!1sen!2s"
                 width="100%" height="100%" style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%)' }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
@@ -600,14 +600,15 @@ export default function Home() {
               <p className="text-sm text-neutral-500 leading-relaxed max-w-xs">Professional AC technician and appliance repair services in Faisalabad. Trusted by thousands for over 25 years.</p>
               <div className="flex gap-4">
                 {[
-                  { name: 'facebook', icon: 'lucide:facebook', color: '#1877F2' },
-                  { name: 'instagram', icon: 'lucide:instagram', color: '#E4405F' },
-                  { name: 'youtube', icon: 'lucide:youtube', color: '#FF0000' },
-                  { name: 'tiktok', icon: 'ic:baseline-tiktok', color: '#ffffff' }
+                  { name: 'facebook', icon: 'lucide:facebook', color: '#1877F2', url: "https://www.facebook.com/share/1EBadZfD3Q/" },
+                  { name: 'instagram', icon: 'lucide:instagram', color: '#E4405F', url: "https://www.instagram.com/expertcool005?utm_source=qr&igsh=ZDZ4djhlZ3FvbHRl" },
+                  { name: 'youtube', icon: 'lucide:youtube', color: '#FF0000', url: "https://youtube.com/@expertcool-b3r?si=QKRKjQYepHEBtNvj" },
+                  { name: 'tiktok', icon: 'ic:baseline-tiktok', color: '#ffffff', url: "https://www.tiktok.com/@expert.cool8?_r=1&_t=ZS-95jwpl8lFOX" }
                 ].map(social => (
-                  <a 
-                    key={social.name} 
-                    href="#" 
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
                     style={{ color: social.color }}
                     className="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/10 flex items-center justify-center transition-all duration-300 hover:bg-white/[0.08] hover:border-white/20 hover:-translate-y-1 shadow-lg"
                   >
