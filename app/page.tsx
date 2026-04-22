@@ -42,7 +42,7 @@ const ReviewCard = ({ name, location, initials, text, delay = "0s" }: any) => (
 
 const BrandLogo = ({ src, alt, delay = "0s", className = "" }: any) => (
   <div
-    className={`reveal h-10 md:h-12 flex items-center justify-center transition-all duration-500 bg-white rounded-xl p-2 hover:scale-110 hover:shadow-lg hover:shadow-cool-500/10 cursor-pointer ${className}`}
+    className={`reveal h-10 md:h-12 flex items-center justify-center transition-all duration-300 bg-white rounded-xl p-2 hover:scale-110 hover:shadow-lg hover:shadow-cool-500/10 cursor-pointer ${className}`}
     style={{ transitionDelay: delay }}
   >
     <Image
@@ -94,7 +94,7 @@ export default function Home() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[800px] md:h-[800px] border border-white/[0.03] rounded-full animate-spin-slow pointer-events-none"></div>
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[500px] md:h-[500px] border border-cool-500/[0.05] rounded-full animate-spin-slow pointer-events-none"
-          style={{ animationDirection: 'reverse', animationDuration: '15s' }}
+          style={{ animationDirection: 'reverse', animationDuration: '10s' }}
         ></div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-24">
@@ -193,7 +193,7 @@ export default function Home() {
             { target: '3500', label: 'Happy Customers' },
             { isSpecial: true, value: <>24<span className="text-cool-400">/7</span></>, label: 'Available' }
           ].map((stat, i) => (
-            <div key={i} className="reveal text-center" style={{ transitionDelay: `${i * 0.1}s` }}>
+            <div key={i} className="reveal text-center" style={{ transitionDelay: `${i * 0.05}s` }}>
               <div className={`font-syne font-bold text-3xl md:text-5xl tracking-tighter ${stat.isSpecial ? 'text-white' : 'text-cool-400 counter'}`} data-target={stat.target}>
                 {stat.isSpecial ? stat.value : '0'}
               </div>
@@ -230,7 +230,7 @@ export default function Home() {
             <ServiceCard
               title="Refrigeration & Deep Freezer"
               icon="lucide:refrigerator"
-              delay="0.1s"
+              delay="0.05s"
               description={
                 <>
                   Professional repair and maintenance for refrigerators and freezers:
@@ -243,22 +243,22 @@ export default function Home() {
             <ServiceCard
               title="Water Chillers & Dispensers"
               icon="lucide:thermometer-snowflake"
-              delay="0.2s"
+              delay="0.1s"
               description="Specialized repair and service for industrial and commercial water chillers. Quick diagnosis and repair of all water dispenser brands. Hot and cold function repairs, gas charging, and sanitization."
             />
             <ServiceCard
               title="Home Appliances"
               icon="lucide:home"
-              delay="0.4s"
+              delay="0.15s"
               description="One-stop solution for all home appliance repairs. Washing machines, microwave ovens, and other electrical equipment servicing."
             />
             <ServiceCard
               title="Sale & Purchase"
               icon="lucide:shopping-bag"
-              delay="0.5s"
+              delay="0.2s"
               description="Buy or sell your AC, Fridge, or other appliances at the best prices. New and used units available with warranty and installation services."
             />
-            <div className="reveal bg-gradient-to-br from-cool-600 to-cool-800 rounded-2xl p-8 flex flex-col justify-between" style={{ transitionDelay: '0.6s' }}>
+            <div className="reveal bg-gradient-to-br from-cool-600 to-cool-800 rounded-2xl p-8 flex flex-col justify-between" style={{ transitionDelay: '0.3s' }}>
               <div>
                 <h3 className="font-syne font-bold text-2xl text-black mb-4">Need Urgent Help?</h3>
                 <p className="text-sm text-black/70 mb-6 font-medium">We offer <span className="text-white"> 24/7 </span> emergency repair services across Faisalabad. Just a click away!</p>
@@ -284,11 +284,11 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { title: 'Same Day Service', icon: 'lucide:zap', text: 'Call us in the morning, get your AC fixed by evening. We prioritize urgent requests in Faisalabad.' },
-              { title: 'Affordable Pricing', icon: 'lucide:badge-indian-rupee', text: 'No hidden charges, no overpricing. We offer the most competitive rates in Faisalabad market.', delay: '0.1s' },
-              { title: 'Experienced Technician', icon: 'lucide:award', text: '25+ years of hands-on experience with all AC brands — Haier, Dawlance, TCL, Gree, Orient and more.', delay: '0.2s' },
-              { title: 'Verified Support', icon: 'lucide:shield-check', text: 'Fully certified and professional team dedicated to providing a hassle-free service experience.', delay: '0.3s' },
-              { title: 'All Faisalabad Covered', icon: 'lucide:map', text: 'We serve all areas — Ghulam Muhammad Abad, Madina Town, Peoples Colony, D-Type, Sattellite Town, and more.', delay: '0.4s' },
-              { title: '24/7 Availability', icon: 'lucide:clock', text: "AC stopped working at midnight? No worries. We're just a call away, day or night.", delay: '0.5s' }
+              { title: 'Affordable Pricing', icon: 'lucide:badge-indian-rupee', text: 'No hidden charges, no overpricing. We offer the most competitive rates in Faisalabad market.', delay: '0.05s' },
+              { title: 'Experienced Technician', icon: 'lucide:award', text: '25+ years of hands-on experience with all AC brands — Haier, Dawlance, TCL, Gree, Orient and more.', delay: '0.1s' },
+              { title: 'Verified Support', icon: 'lucide:shield-check', text: 'Fully certified and professional team dedicated to providing a hassle-free service experience.', delay: '0.15s' },
+              { title: 'All Faisalabad Covered', icon: 'lucide:map', text: 'We serve all areas — Ghulam Muhammad Abad, Madina Town, Peoples Colony, D-Type, Sattellite Town, and more.', delay: '0.2s' },
+              { title: '24/7 Availability', icon: 'lucide:clock', text: "AC stopped working at midnight? No worries. We're just a call away, day or night.", delay: '0.25s' }
             ].map((feature, i) => (
               <div key={i} className="reveal flex gap-6 bg-white/[0.02] border border-white/5 rounded-2xl p-8" style={{ transitionDelay: feature.delay }}>
                 <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-cool-500/10 flex items-center justify-center">
@@ -440,17 +440,15 @@ export default function Home() {
               <div
                 key={item.num}
                 className={`reveal group relative rounded-xl overflow-hidden border border-white/5 bg-neutral-900 ${item.span}`}
-                style={{ transitionDelay: `${i * 0.1}s` }}
+                style={{ transitionDelay: `${i * 0.05}s` }}
               >
                 <div className="relative w-full h-full">
                   <Image
                     src={`/images/image${item.num}.png`}
                     alt={`Service Showcase ${item.num}`}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
-                    <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                       <div className="text-[10px] uppercase tracking-widest text-cool-400 font-bold mb-1">Project {item.num}</div>
                       <div className="text-white font-syne font-semibold text-xs">AC Service</div>
                     </div>
@@ -482,14 +480,14 @@ export default function Home() {
               initials="SK"
               name="Sana Khan"
               location="Madina Town, FSD"
-              delay="0.1s"
+              delay="0.05s"
               text="Best fridge repair service in Faisalabad! My Dawlance fridge compressor was making noise. They replaced it at a very reasonable price. Highly recommend."
             />
             <ReviewCard
               initials="MR"
               name="Muhammad Rizwan"
               location="Ghulam Muhammad Abad, FSD"
-              delay="0.2s"
+              delay="0.1s"
               text="Bought a used inverter AC from them at great price. They installed it perfectly and gave 15 days checking warranty. Very professional and trustworthy."
             />
           </div>
@@ -503,16 +501,16 @@ export default function Home() {
             <span className="text-xs uppercase tracking-[0.3em] text-neutral-500">Brands We Service</span>
           </div>
           <div className="reveal flex flex-wrap items-center justify-center gap-10 md:gap-16">
-            <BrandLogo src="/images/Haier-Logo.wine.png" alt="Haier" delay="0.1s" />
-            <BrandLogo src="/images/dawlance-logo.png" alt="Dawlance" delay="0.2s" />
-            <BrandLogo src="/images/TCL_Corporation-Logo.wine.png" alt="TCL" delay="0.3s" />
-            <BrandLogo src="/images/gree.png" alt="Gree" delay="0.4s" />
-            <BrandLogo src="/images/orient-logo.svg" alt="Orient" delay="0.5s" />
-            <BrandLogo src="/images/daikin-removebg-preview.png" alt="Daikin" delay="0.6s" />
-            <BrandLogo src="/images/Acson_International_logo.png" alt="Acson" delay="0.7s" />
-            <BrandLogo src="/images/kenwood_190x@2x.avif" alt="Kenwood" delay="0.8s" />
-            <BrandLogo src="/images/pel.avif" alt="Pel" delay="0.9s" />
-            <BrandLogo src="/images/300_186_1.avif" alt="Samsung" delay="1s" className="p-0 bg-transparent" />
+            <BrandLogo src="/images/Haier-Logo.wine.png" alt="Haier" delay="0.05s" />
+            <BrandLogo src="/images/dawlance-logo.png" alt="Dawlance" delay="0.1s" />
+            <BrandLogo src="/images/TCL_Corporation-Logo.wine.png" alt="TCL" delay="0.15s" />
+            <BrandLogo src="/images/gree.png" alt="Gree" delay="0.2s" />
+            <BrandLogo src="/images/orient-logo.svg" alt="Orient" delay="0.25s" />
+            <BrandLogo src="/images/daikin-removebg-preview.png" alt="Daikin" delay="0.3s" />
+            <BrandLogo src="/images/Acson_International_logo.png" alt="Acson" delay="0.35s" />
+            <BrandLogo src="/images/kenwood_190x@2x.avif" alt="Kenwood" delay="0.4s" />
+            <BrandLogo src="/images/pel.avif" alt="Pel" delay="0.45s" />
+            <BrandLogo src="/images/300_186_1.avif" alt="Samsung" delay="0.5s" className="p-0 bg-transparent" />
           </div>
         </div>
       </section>

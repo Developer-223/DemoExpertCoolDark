@@ -52,7 +52,7 @@ export default function AppLogic() {
 
     function animateCounter(element: HTMLElement, target: number) {
       let current = 0;
-      const increment = target / 60;
+      const increment = target / 30; // Faster increment
       const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
@@ -60,7 +60,7 @@ export default function AppLogic() {
           clearInterval(timer);
         }
         element.textContent = Math.floor(current).toLocaleString() + '+';
-      }, 25);
+      }, 20); // Faster interval
     }
 
     // ===== NAVBAR SCROLL EFFECT =====

@@ -69,7 +69,7 @@ export default function Navigation() {
 
       {/* Mobile Menu Side Drawer */}
       <div
-        className={`fixed top-0 right-0 bottom-0 z-50 w-[280px] bg-[#0a0a0a] border-l border-white/5 shadow-2xl flex flex-col p-8 transition-transform duration-500 cubic-bezier(0.2, 0.8, 0.2, 1) ${
+        className={`fixed top-0 right-0 bottom-0 z-50 w-[280px] bg-[#0a0a0a] border-l border-white/5 shadow-2xl flex flex-col p-8 transition-transform duration-300 cubic-bezier(0.2, 0.8, 0.2, 1) ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

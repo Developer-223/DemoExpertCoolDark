@@ -15,16 +15,16 @@
     --font-syne: var(--font-syne);
     --font-inter: var(--font-inter);
 
-    --animate-fade-in: fadeInUpBlur 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
-    --animate-fade-in-d1: fadeInUpBlur 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s both;
-    --animate-fade-in-d2: fadeInUpBlur 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s both;
-    --animate-fade-in-d3: fadeInUpBlur 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s both;
-    --animate-fade-in-d4: fadeInUpBlur 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s both;
-    --animate-fade-in-d5: fadeInUpBlur 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s both;
+    --animate-fade-in: fadeInUpBlur 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    --animate-fade-in-d1: fadeInUpBlur 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.05s both;
+    --animate-fade-in-d2: fadeInUpBlur 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s both;
+    --animate-fade-in-d3: fadeInUpBlur 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s both;
+    --animate-fade-in-d4: fadeInUpBlur 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s both;
+    --animate-fade-in-d5: fadeInUpBlur 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.25s both;
     --animate-float: float 3s ease-in-out infinite;
     --animate-pulse-glow: pulse-glow 2s ease-in-out infinite;
-    --animate-marquee: marquee 10s linear infinite;
-    --animate-spin-slow: spin-slow 20s linear infinite;
+    --animate-marquee: 8s linear infinite;
+    --animate-spin-slow: 15s linear infinite;
     --animate-beam-move: beam-move 3s ease-in-out infinite;
     --animate-snowfall: snowfall linear infinite;
     --animate-ping-slow: ping 2.4s ease-in-out infinite;
@@ -103,7 +103,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
     filter: blur(10px);
-    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .reveal.visible {
@@ -149,7 +149,7 @@ body {
 
 /* Service card hover */
 .service-card {
-    transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .service-card:hover {
