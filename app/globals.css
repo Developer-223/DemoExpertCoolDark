@@ -166,8 +166,20 @@ body {
 }
 
 /* Custom scrollbar */
+:root {
+    scrollbar-width: thin;
+    scrollbar-color: #0ea5e9 #0a0a0a;
+}
+
+html, body, * {
+    scrollbar-width: thin;
+    scrollbar-color: #0ea5e9 #0a0a0a;
+}
+
+/* For Chrome, Safari, and Opera */
 ::-webkit-scrollbar {
     width: 6px;
+    height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -176,11 +188,11 @@ body {
 
 ::-webkit-scrollbar-thumb {
     background: #0ea5e9;
-    border-radius: 3px;
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #0ea5e9;
+    background: #38bdf8;
 }
 
 /* Beam effect */
