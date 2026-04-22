@@ -55,6 +55,13 @@ const BrandLogo = ({ src, alt, delay = "0s", className = "" }: any) => (
   </div>
 );
 
+const SOCIAL_LINKS = [
+  { name: 'facebook', icon: 'lucide:facebook', color: '#1877F2', url: "https://www.facebook.com/share/1EBadZfD3Q/" },
+  { name: 'instagram', icon: 'lucide:instagram', color: '#E4405F', url: "https://www.instagram.com/expertcool005?utm_source=qr&igsh=ZDZ4djhlZ3FvbHRl" },
+  { name: 'youtube', icon: 'lucide:youtube', color: '#FF0000', url: "https://youtube.com/@expertcool-b3r?si=QKRKjQYepHEBtNvj" },
+  { name: 'tiktok', icon: 'ic:baseline-tiktok', color: '#ffffff', url: "https://www.tiktok.com/@expert.cool8?_r=1&_t=ZS-95jwpl8lFOX" }
+];
+
 export default function Home() {
   const [formData, setFormData] = useState({ name: '', phone: '', service: '', message: '' });
 
@@ -91,6 +98,27 @@ export default function Home() {
         ></div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-24">
+          <div className="animate-fade-in flex items-center justify-center gap-8 mb-4">
+            {SOCIAL_LINKS.map((social) => (
+              <a
+                key={social.name}
+                href={social.url}
+                target="_blank"
+                className="group relative"
+                title={`Follow us on ${social.name}`}
+              >
+                <div className="absolute -inset-2 bg-white/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <Icon
+                  icon={social.icon}
+                  className="text-xl text-neutral-500 transition-all duration-300 group-hover:scale-125"
+                  style={{ color: 'var(--icon-color)' } as any}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = social.color)}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '')}
+                />
+              </a>
+            ))}
+          </div>
+
           <div className="animate-fade-in inline-flex items-center gap-2 bg-white/[0.03] border border-white/10 rounded-full px-5 py-2 mb-8">
             <Icon icon="lucide:snowflake" className="text-cool-400 animate-pulse" />
             <span className="text-xs uppercase tracking-widest text-neutral-400">Serving Faisalabad Since 1999</span>
@@ -490,8 +518,8 @@ export default function Home() {
       </section>
 
       {/* CONTACT SECTION */}
-     <section id="contact" className="relative py-12 px-6">
-      <div className="max-w-6xl mx-auto">
+      <section id="contact" className="relative py-12 px-6">
+        <div className="max-w-6xl mx-auto">
           <div className="reveal text-center mb-10">
             <span className="inline-block text-xs uppercase tracking-[0.3em] text-cool-400 mb-4">Get In Touch</span>
             <h2 className="font-syne font-bold text-3xl md:text-5xl lg:text-6xl tracking-tighter mb-4">Contact Us Now</h2>
@@ -576,11 +604,19 @@ export default function Home() {
 
             </div>
 
-            <div className="reveal rounded-2xl overflow-hidden border border-white/5 h-full min-h-[400px]" style={{ transitionDelay: '0.15s' }}>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41415.513531426506!2d73.0941252791016!3d31.441259199999987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x392269ec1283d4df%3A0x37d4691b1da2ca51!2sAc%20Technician%20Expert%20Cool!5e1!3m2!1sen!2s!4v1776838805282!5m2!1sen!2s"
-                width="100%" height="100%" style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%)' }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
+            <div className="reveal flex flex-col" style={{ transitionDelay: '0.15s' }}>
+              <div className="rounded-2xl overflow-hidden border border-white/5 h-full min-h-[400px]">
+                {/* <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41415.513531426506!2d73.0941252791016!3d31.441259199999987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x392269ec1283d4df%3A0x37d4691b1da2ca51!2sAc%20Technician%20Expert%20Cool!5e1!3m2!1sen!2s!4v1776838805282!5m2!1sen!2s"
+                  width="100%" height="100%" style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%)' }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
+                ></iframe> */}
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29394.76696952026!2d73.1107093374958!3d31.42501351523218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x392269ec1283d4df%3A0x37d4691b1da2ca51!2sAc%20Technician%20Expert%20Cool!5e0!3m2!1sen!2s!4v1776877347082!5m2!1sen!2s"
+                  width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+              <p className="flex items-center justify-center gap-2 text-xs text-neutral-500 text-center mt-4">
+                <Icon icon="lucide:map-pin" className="text-cool-400" />
+                Kashmir Pull, Amin Town, Faisalabad, Pakistan
+              </p>
             </div>
           </div>
         </div>
@@ -599,12 +635,7 @@ export default function Home() {
               </div>
               <p className="text-sm text-neutral-500 leading-relaxed max-w-xs">Professional AC technician and appliance repair services in Faisalabad. Trusted by thousands for over 25 years.</p>
               <div className="flex gap-4">
-                {[
-                  { name: 'facebook', icon: 'lucide:facebook', color: '#1877F2', url: "https://www.facebook.com/share/1EBadZfD3Q/" },
-                  { name: 'instagram', icon: 'lucide:instagram', color: '#E4405F', url: "https://www.instagram.com/expertcool005?utm_source=qr&igsh=ZDZ4djhlZ3FvbHRl" },
-                  { name: 'youtube', icon: 'lucide:youtube', color: '#FF0000', url: "https://youtube.com/@expertcool-b3r?si=QKRKjQYepHEBtNvj" },
-                  { name: 'tiktok', icon: 'ic:baseline-tiktok', color: '#ffffff', url: "https://www.tiktok.com/@expert.cool8?_r=1&_t=ZS-95jwpl8lFOX" }
-                ].map(social => (
+                {SOCIAL_LINKS.map(social => (
                   <a
                     key={social.name}
                     href={social.url}
@@ -647,7 +678,8 @@ export default function Home() {
           </div>
 
           <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-neutral-600">© 2026 AC Technician Expert Cool. All rights reserved. Faisalabad, Pakistan.</p>
+            <p className="text-xs text-neutral-600">© {new Date().getFullYear()} AC Technician Expert Cool. All rights reserved. Faisalabad, Pakistan.</p>
+            <p className="text-xs text-neutral-600"> Develope By <a href="https://sajidhameedportfolio.vercel.app/" target="_blank" className='text-cool-400'>Sajid Hameed</a></p>
             <div className="flex items-center gap-2 text-xs text-neutral-600">
               <Icon icon="lucide:snowflake" className="text-cool-500/50" />
               <span>Keeping Faisalabad Cool Since 1999</span>
@@ -663,7 +695,7 @@ export default function Home() {
         className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 hover:bg-cool-400 hover:scale-110 transition-all duration-300 animate-pulse-glow"
         title="Chat on WhatsApp"
       >
-        <Icon icon="lucide:phone" className="text-2xl text-white" />
+        <Icon icon="ic:baseline-whatsapp" className="text-3xl text-white" />
       </a>
     </main>
   );

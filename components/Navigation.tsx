@@ -76,7 +76,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between mb-12">
           <span className="font-syne font-bold text-lg text-cool-400">MENU</span>
           <button onClick={closeMenu} className="w-10 h-10 flex items-center justify-center rounded-lg border border-white/10">
-            <Icon icon="lucide:x" className="text-xl" />
+            <Icon icon="lucide:refrigerator" className="text-xl" />
           </button>
         </div>
 
