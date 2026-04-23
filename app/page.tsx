@@ -447,6 +447,7 @@ export default function Home() {
                     src={`/images/image${item.num}.png`}
                     alt={`Service Showcase ${item.num}`}
                     fill
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                     <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                       <div className="text-[10px] uppercase tracking-widest text-cool-400 font-bold mb-1">Project {item.num}</div>
@@ -690,10 +691,14 @@ export default function Home() {
       <a
         href="https://wa.me/923017067764"
         target="_blank"
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 hover:bg-cool-400 hover:scale-110 transition-all duration-300 animate-pulse-glow"
-        title="Chat on WhatsApp"
+        className="fixed bottom-6 right-6 z-50 group flex items-center"
       >
-        <Icon icon="ic:baseline-whatsapp" className="text-3xl text-white" />
+        <span className="mr-3 px-4 py-2 bg-cool-500 text-white text-[10px] font-bold uppercase tracking-[0.2em] rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-4 group-hover:translate-x-0 pointer-events-none shadow-xl shadow-cool-500/20">
+          Contact Us
+        </span>
+        <div className="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 group-hover:bg-cool-400 group-hover:scale-110 transition-all duration-300 animate-pulse-glow">
+          <Icon icon="ic:baseline-whatsapp" className="text-3xl text-white" />
+        </div>
       </a>
     </main>
   );
